@@ -2,7 +2,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for post in posts %}
+{% for post in post_list %}
+<!-- The post_list QuerySet is returned by ListView when model = Post -->
 <div class="post-entry">
     <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
     <p>Author: {{ post.author }}</p>
